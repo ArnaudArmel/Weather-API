@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calgary Weather Room</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="top-bar">
+    <div class="brand">
+      <p class="eyebrow">WEATHER API</p>
+      <h1>Calgary Weather</h1>
+    </div>
+    <div class="weather-summary" aria-live="polite">
+      <p class="location">CALGARY, ALBERTA</p>
+      <p><strong class="temperature" id="temperature">--°C</strong> · <span id="condition">Loading weather…</span></p>
+      <fieldset>
+        <legend>Temperature unit</legend>
+        <label><input type="radio" name="unit" id="celsius" checked> °C</label>
+        <label><input type="radio" name="unit" id="fahrenheit"> °F</label>
+      </fieldset>
+    </div>
+  </header>
+  <main class="page-layout">
+    <section class="living-room" aria-label="Illustrated Calgary living room">
+      <p class="window-label">YOUR WINDOW TO CALGARY</p>
+      <div class="window" id="window" aria-label="Weather scene">
+        <div class="scene" aria-hidden="true">
+          <span class="weather-symbol" id="scene">☀️</span>
+          <span class="mountains">🏔️ 🏔️</span>
+          <span class="trees">🌲 🌲 🌲</span>
+        </div>
+        <div class="window-cross vertical"></div>
+        <div class="window-cross horizontal"></div>
+      </div>
+      <div class="wall-clock" aria-label="Calgary time">
+        <span>CALGARY TIME</span>
+        <strong id="updated">--:--</strong>
+      </div>
+      <div class="wall-picture" aria-hidden="true">☼</div>
+      <div class="plant" aria-hidden="true">🪴</div>
+      <div class="rug" aria-hidden="true"></div>
+      <div class="sofa" aria-hidden="true">
+        <div class="sofa-back"></div>
+        <div class="sofa-cushion left"></div>
+        <div class="sofa-cushion right"></div>
+        <div class="sofa-arm left"></div>
+        <div class="sofa-arm right"></div>
+      </div>
+      <div class="coffee-table" aria-hidden="true"></div>
+    </section>
+    <aside class="controls">
+      <p class="control-heading">Make yourself at home.</p>
+      <p id="scene-status" aria-live="polite">Showing live weather.</p>
+      <label for="scene-select">Look outside</label>
+      <select id="scene-select">
+        <option value="current">Live weather</option>
+        <option value="sunny">Preview · Sunny</option>
+        <option value="cloudy">Preview · Cloudy</option>
+        <option value="rainy">Preview · Rainy</option>
+        <option value="snowy">Preview · Snowy</option>
+        <option value="stormy">Preview · Stormy</option>
+      </select>
+      <p class="error" id="error" role="alert"></p>
+      <button id="refresh-button" type="button">Refresh weather</button>
+    </aside>
+  </main>
+  <footer>
+    <p>© 2026 Arnaud Armel · Weather data by Open-Meteo</p>
+  </footer>
+</body>
+</html>
