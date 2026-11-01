@@ -1,4 +1,4 @@
-// AI-assisted starter code: GPT-6 Codex, 2026-10-24. Review and personalize before submitting.
+
 const temperatureText = document.getElementById("temperature");
 const conditionText = document.getElementById("condition");
 const updatedText = document.getElementById("updated");
